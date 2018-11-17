@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tab Talking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Roberto Alonso Gomez">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="GTalk.js"></script>
+
+    <style>
+        .btw {
+            width: 130px;
+            height: 150px;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container jumbotron">
+        <h1 class="display-4">Grapher Talker</h1>
+        <div class="btn-group">
+            <button id="btOpen" class="btn btn-secondary">Open</button>
+            <button id="btOpenPop" class="btn btn-secondary">Popup</button>
+            <button id="btClear" type="button" class="btn btn-secondary">Clear</button>
+
+            <div data-toggle="collapse" data-target="#bkAsk">
+                <span class="fa fa-toggle-right fa-2x"></span>
+            </div>
+
+            <div id="bkAsk" class="btn-group contain">
+                <button name="samples" class="btn btn-info" data-cm="cx">Check Connect</button>
+                <button name="samples" class="btn btn-info" data-cm="gst">Get State</button>
+
+
+                <button class="btn btn-info" name="samples" data-cm="gexps">Get Expresions</button>
+                <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">New
+                            <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li> </li>
+                        <li><button class="btn btn-info" name="samples" data-cm="nTx:Text Name">New Text</button></li>
+                        <li><button class="btn btn-info" name="samples" data-cm="nFld:Folder Name">New Folder</button></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Expresions
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><button class="btn btn-info" name="samples" data-cm="exp:'Sample 01;x^2;'Sample 02;x+5*y^2=0">Samples With text</button></li>
+                        <li><button class="btn btn-info" name="samples" data-cm="exp:<Folder 01;'Sample 01;x^2;'Sample 02;x+5*y^2=0;>">Samples inside a folder</button></li>
+                    </ul>
+                </div>
+                <button class="btn btn-info" name="samples" data-cm="gsel">Get Selected</button>
+            </div>
+
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <button id="btSend" type="button" class="btn btn-outline-primary btw">Send</button>
+
+            </div>
+            <textarea id="txSend" class="form-control" aria-label="With textarea"></textarea>
+        </div>
+        <hr />
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text btw">Receive</span>
+            </div>
+            <textarea id="taResult" class="form-control" aria-label="With textarea"></textarea>
+        </div>
+
+    </div>
+</body>
+
+</html>
